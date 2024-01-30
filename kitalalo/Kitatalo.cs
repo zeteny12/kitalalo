@@ -14,7 +14,6 @@ namespace kitalalo
 
         public Kitatalo(string Beolvas)
         {
- 
             string[] kitalal = Beolvas.Split(',');
             KitalaltSzo1 = kitalal[0];
         }

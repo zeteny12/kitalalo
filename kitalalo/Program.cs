@@ -49,13 +49,20 @@ namespace kitalalo
                 }
 
                 string eredmeny = kivalasztottSzo.KitalalasEredmeny(tipp);
-                Console.WriteLine($"Eredmény: {eredmeny}");
+                for (int i = 0; i < kivalasztottSzo.KitalaltSzo.Length; i++)
+                {
+                    if (eredmeny[i] != '.')
+                    {
+                        megfejtettBetuk[i] = eredmeny[i];
+                    }
+                }
 
                 tippekSzama++;
+                Console.WriteLine($"Megfejtés: {eredmeny}");
 
             } while (!kivalasztottSzo.Megfejtve(new string(megfejtettBetuk)));
 
-            Console.WriteLine($"Gratulálok, ki találtad! {tippekSzama} tipp kellett hozzá.");
+            Console.WriteLine($"Gratulálok, kitaláltad! {tippekSzama} tipp kellett hozzá.");
         }
 
         // Adatok beolvasása
